@@ -1,0 +1,105 @@
+.skills {
+  background: var(--bg);
+}
+
+.skillsLayout {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
+  align-items: start;
+}
+
+.skillsCategory {
+  margin-bottom: 36px;
+}
+
+.skillsCatTitle {
+  font-size: 11px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--muted);
+  margin-bottom: 18px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid var(--border);
+}
+
+.skillChips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.chip {
+  font-size: 12px;
+  padding: 8px 16px;
+  background: var(--card);
+  border: 1px solid var(--border);
+  color: var(--text);
+  letter-spacing: 0.05em;
+  transition: all 0.2s;
+  cursor: default;
+}
+.chip:hover {
+  border-color: var(--accent);
+  color: var(--accent);
+  background: rgba(0, 229, 160, 0.05);
+}
+
+.chipHighlight {
+  border-color: rgba(0, 229, 160, 0.4);
+  color: var(--accent);
+  background: rgba(0, 229, 160, 0.07);
+}
+
+.skillBars {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.skillBarHeader {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 8px;
+  font-size: 12px;
+}
+
+.skillBarName {
+  color: var(--text);
+}
+
+.skillBarPct {
+  color: var(--accent);
+}
+
+.skillBarTrack {
+  height: 2px;
+  background: var(--border);
+  overflow: hidden;
+  border-radius: 1px;
+}
+
+.skillBarFill {
+  height: 100%;
+  background: linear-gradient(90deg, var(--accent), var(--accent2));
+  width: 0%;
+  transition: width 1.3s cubic-bezier(0.16, 1, 0.3, 1);
+  border-radius: 1px;
+}
+
+.proficiencyTitle {
+  margin-bottom: 24px;
+}
+
+@media (max-width: 1024px) {
+  .skillsLayout {
+    gap: 40px;
+  }
+}
+
+@media (max-width: 768px) {
+  .skillsLayout {
+    grid-template-columns: 1fr;
+    gap: 8px;
+  }
+}
