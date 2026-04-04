@@ -1,88 +1,166 @@
 .experience {
-  background: var(--surface);
+  background: var(--bg);
+  padding: 100px 0;
 }
 
-.expGrid {
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  gap: 2px;
-  background: var(--border);
+.expContainer {
+  position: relative;
+  max-width: 1000px;
+  margin: 60px auto 0;
+}
+
+/* Vertical Timeline Line */
+.timelineLine {
+  position: absolute;
+  left: 24px;
+  top: 0;
+  bottom: 0;
+  width: 1px;
+  background: linear-gradient(to bottom, 
+    transparent, 
+    rgba(0, 229, 160, 0.1) 5%, 
+    rgba(0, 229, 160, 0.2) 50%, 
+    rgba(0, 229, 160, 0.1) 95%, 
+    transparent
+  );
+  z-index: 1;
+}
+
+.timeline {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+
+.expItem {
+  position: relative;
+  padding-left: 70px;
+}
+
+/* Timeline Node Dot */
+.node {
+  position: absolute;
+  left: 20px;
+  top: 14px;
+  width: 9px;
+  height: 9px;
+  background: var(--bg);
+  border: 2px solid var(--accent);
+  border-radius: 50%;
+  z-index: 2;
+  box-shadow: 0 0 0 4px var(--bg);
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.expItem:hover .node {
+  transform: scale(1.5);
+  background: var(--accent);
+  box-shadow: 0 0 15px rgba(0, 229, 160, 0.4);
 }
 
 .expCard {
   background: var(--card);
-  padding: 44px;
+  border: 1px solid var(--border);
+  padding: 48px;
+  transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
   position: relative;
   overflow: hidden;
-  transition: background 0.3s;
 }
-.expCard::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 3px;
-  height: 0;
-  background: var(--accent);
-  transition: height 0.4s ease;
-}
-.expCard:hover::before {
-  height: 100%;
-}
+
 .expCard:hover {
-  background: #16161f;
+  border-color: rgba(0, 229, 160, 0.3);
+  transform: translateX(12px) translateY(-4px);
+  background: rgba(255, 255, 255, 0.01);
+  box-shadow: 20px 20px 40px rgba(0, 0, 0, 0.2);
+}
+
+.expHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 24px;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+
+.titleArea {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
 }
 
 .expRole {
-  font-size: 11px;
-  color: var(--accent);
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
-  margin-bottom: 6px;
+  font-family: var(--font-jakarta), 'Plus Jakarta Sans', sans-serif;
+  font-weight: 800;
+  font-size: 24px;
+  letter-spacing: -0.02em;
+  color: var(--text);
+  line-height: 1.1;
 }
 
 .expCompany {
-  font-family: var(--font-jakarta), 'Plus Jakarta Sans', sans-serif;
+  font-size: 13px;
+  color: var(--accent);
   font-weight: 700;
-  font-size: 19px;
-  color: var(--text);
-  margin-bottom: 8px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
 }
 
 .expPeriod {
   font-size: 11px;
   color: var(--muted);
-  margin-bottom: 22px;
-  font-style: italic;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  background: rgba(255, 255, 255, 0.03);
+  padding: 6px 12px;
+  border: 1px solid var(--border);
 }
 
 .expBullets {
   list-style: none;
   display: flex;
   flex-direction: column;
-  gap: 10px;
+  gap: 12px;
 }
 
 .expBullet {
-  font-size: 12px;
+  font-size: 14px;
   color: var(--muted);
+  line-height: 1.6;
   padding-left: 20px;
   position: relative;
-  line-height: 1.65;
 }
+
 .expBullet::before {
-  content: '->';
+  content: '';
   position: absolute;
   left: 0;
-  color: var(--accent);
-  font-size: 11px;
+  top: 10px;
+  width: 6px;
+  height: 1px;
+  background: var(--accent);
+  opacity: 0.4;
 }
 
 @media (max-width: 768px) {
-  .expGrid {
-    grid-template-columns: 1fr;
+  .expItem {
+    padding-left: 50px;
+  }
+  .node {
+    left: 20px;
+  }
+  .timelineLine {
+    left: 24px;
   }
   .expCard {
-    padding: 28px 22px;
+    padding: 32px 24px;
+  }
+  .expRole {
+    font-size: 20px;
+  }
+  .expHeader {
+    flex-direction: column;
+    gap: 12px;
   }
 }

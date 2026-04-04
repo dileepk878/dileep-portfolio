@@ -130,8 +130,29 @@
 .heroCta {
   display: flex;
   flex-wrap: wrap;
+  align-items: center;
   gap: 14px;
   margin-top: 44px;
+}
+
+.heroSocialBtn {
+  width: 48px;
+  height: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: transparent;
+  color: var(--text);
+  border: 1px solid var(--border);
+  transition: all 0.25s;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.heroSocialBtn:hover {
+  border-color: var(--accent);
+  color: var(--accent);
+  transform: translateY(-2px);
 }
 
 @media (max-width: 1024px) {

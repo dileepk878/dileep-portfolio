@@ -85,13 +85,24 @@ export const experiences: Experience[] = [
   {
     role: "Systems Engineer - Python",
     company: "Reizend Private Limited",
-    period: "March 2022 - August 2024",
+    period: "April 2023 - August 2024",
     bullets: [
       "Built Django web apps and REST APIs for retail and shop floor automation",
       "Collaborated with clients to gather and solution requirements",
       "Identified issues, analyzed information, and provided solutions",
       "Delivered projects on schedule using coordination and planning skills",
       "Quickly visualized development processes to capture opportunities",
+    ],
+  },
+  {
+    role: "Junior Systems Engineer",
+    company: "Reizend Private Limited",
+    period: "March 2022 - April 2023",
+    bullets: [
+      "Assisted in backend development using Python and Django",
+      "Supported development of web-based retail applications",
+      "Collaborated with senior engineers on system design and debugging",
+      "Maintained and updated existing codebases to improve performance",
     ],
   },
 ];
