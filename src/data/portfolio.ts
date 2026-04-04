@@ -36,6 +36,15 @@ export interface Stat {
   label: string;
 }
 
+export interface Project {
+  title: string;
+  description: string;
+  tags: string[];
+  link: string;
+  image?: string;
+  company: string;
+}
+
 export const heroData = {
   name: "Dileep K",
   roles: [
@@ -166,6 +175,33 @@ export const educations: Education[] = [
     degree: "Diploma in Computer Engineering",
     year: "2017 - 2020",
     icon: "🔧",
+  },
+];
+
+export const projects: Project[] = [
+  {
+    title: "Aurex™ - Intelligent GRC & Analytics",
+    company: "Beinex Consulting",
+    description:
+      "A unique plug-and-play digital assurance ecosystem that unifies Governance, Risk, Compliance, and Analytics. Powered by AI and Machine Learning, it provides 360-degree enterprise visibility and real-time risk monitoring.",
+    tags: ["Python", "Django", "FastAPI", "AI/ML", "Pandas", "Analytics"],
+    link: "https://www.aurex.ai/",
+  },
+  {
+    title: "SFA - Shop Floor Automation",
+    company: "Reizend Private Limited",
+    description:
+      "An advanced Production Analytics and Shop Floor Algorithm platform. Optimizes 24/7 machine utilization and minimizes process losses for large-scale manufacturing units by synchronizing production with real-time market demand.",
+    tags: ["Python", "Big Data", "Analytics", "ERP Integration", "Optimization"],
+    link: "https://reizend.ai/case-study2",
+  },
+  {
+    title: "Dr. Sales - Sales Channel Automation",
+    company: "Reizend Private Limited",
+    description:
+      "A comprehensive end-to-end sales channel and field-force automation software. Automates the entire sales cycle from factory to retailer, including reconciliation, route optimization, and live monitoring with in-built analytics.",
+    tags: ["Python", "Django", "PostgreSQL", "Automation", "Logic", "Mobile API"],
+    link: "https://reizend.ai/drsales.html",
   },
 ];
 
